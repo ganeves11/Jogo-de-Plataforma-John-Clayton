@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Electrolize-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://john clayton figure.png" type="Texture" id=2]
+[ext_resource path="res://script_inicio.gd" type="Script" id=3]
+[ext_resource path="res://white-texture-background-4u1tszdszoz6jk9t.jpg" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 52
+font_data = ExtResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
+position = Vector2( 513.5, 301.5 )
+scale = Vector2( 0.532812, 0.499167 )
+texture = ExtResource( 4 )
+
+[node name="Button_iniciar" type="Button" parent="."]
+margin_left = 440.0
+margin_top = 404.0
+margin_right = 645.0
+margin_bottom = 465.0
+custom_fonts/font = SubResource( 1 )
+text = "Iniciar"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 327.0
+margin_top = 30.0
+margin_right = 760.0
+margin_bottom = 225.0
+custom_colors/font_color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "John Clayton ama
+      Sanduíches
+"
+
+[node name="Personagem" type="Sprite" parent="."]
+position = Vector2( 539, 273 )
+scale = Vector2( 2.30986, 2.90124 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 1177, 427, 29, 71 )
+
+[connection signal="pressed" from="Button_iniciar" to="." method="iniciar_jogo"]

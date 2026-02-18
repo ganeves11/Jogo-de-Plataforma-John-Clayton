@@ -1,0 +1,240 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://john clayton figure.png" type="Texture" id=1]
+[ext_resource path="res://script_personagem.gd" type="Script" id=2]
+[ext_resource path="res://audio/Projeto_novo (3).wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/Projeto_novo (6).wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/Projeto_novo (5).wav" type="AudioStream" id=5]
+[ext_resource path="res://audio/Projeto_novo (7).wav" type="AudioStream" id=6]
+[ext_resource path="res://audio/Projeto_novo (4).wav" type="AudioStream" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 55, 98.5 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 295, 258, 39, 69 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "andando"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.199821, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 295, 258, 39, 69 ), Rect2( 422, 259, 42, 68 ), Rect2( 422, 259, 42, 68 ), Rect2( 539, 259, 54, 63 ), Rect2( 798, 259, 38, 68 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "ataque"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 743, 907, 38, 68 ), Rect2( 871, 907, 38, 68 ), Rect2( 1005, 908, 55, 67 ), Rect2( 1262, 908, 42, 67 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "atirando"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 619, 906, 36, 69 ), Rect2( 743, 907, 38, 68 ), Rect2( 871, 907, 38, 68 ), Rect2( 1005, 908, 55, 67 ), Rect2( 1133, 909, 58, 66 ), Rect2( 1262, 908, 42, 67 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "atirar_sanduiche"
+} ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "morrendo"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 659, 734, 27, 69 ), Rect2( 789, 733, 26, 70 ), Rect2( 916, 742, 47, 61 ), Rect2( 1045, 761, 71, 42 ), Rect2( 1173, 790, 64, 13 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "pulando"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 977, 73, 43, 75 ), Rect2( 1228, 83, 51, 73 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "respirando"
+length = 0.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 793, 429, 29, 69 ), Rect2( 921, 428, 29, 70 ), Rect2( 1049, 427, 29, 71 ) ]
+}
+
+[node name="Personagem" type="Node2D"]
+position = Vector2( 498, 288 )
+__meta__ = {
+"_edit_vertical_guides_": [ 353.0 ]
+}
+
+[node name="Personagem" type="KinematicBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Personagem"]
+position = Vector2( -18.5313, 205.372 )
+scale = Vector2( 2.85634, 3.05819 )
+texture = ExtResource( 1 )
+offset = Vector2( 9.29449, -73.5478 )
+region_enabled = true
+region_rect = Rect2( 295, 258, 39, 69 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem"]
+position = Vector2( 12, -16.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem"]
+autoplay = "andando"
+anims/RESET = SubResource( 2 )
+anims/andando = SubResource( 5 )
+anims/ataque = SubResource( 8 )
+anims/atirando = SubResource( 3 )
+anims/morrendo = SubResource( 9 )
+anims/pulando = SubResource( 6 )
+anims/respirando = SubResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="Personagem"]
+position = Vector2( -11, -28 )
+
+[node name="Camera2D" type="Camera2D" parent="Personagem"]
+current = true
+
+[node name="RayCast2DMaoEsq" type="RayCast2D" parent="Personagem"]
+position = Vector2( -28, -8 )
+rotation = 1.57079
+scale = Vector2( 7.96127, 0.908904 )
+enabled = true
+collision_mask = 8
+
+[node name="RayCast2DMaoDir" type="RayCast2D" parent="Personagem"]
+position = Vector2( 46, -49 )
+rotation = 4.71238
+scale = Vector2( 7.96127, 0.908904 )
+enabled = true
+cast_to = Vector2( -5.34058e-05, 51.7106 )
+collision_mask = 8
+
+[node name="SomAtaque" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 4 )
+volume_db = -12.0
+
+[node name="SomDano" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 5 )
+volume_db = -12.0
+
+[node name="SomMorte" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 7 )
+volume_db = 5.0
+
+[node name="SomPulo" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 3 )
+volume_db = -12.0
+
+[node name="SomSanduiche" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 6 )
+volume_db = -12.0
+
+[connection signal="animation_finished" from="Personagem/AnimationPlayer" to="Personagem" method="animacao_finalizada"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script_sanduiche_coletavel.gd" type="Script" id=2]
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Captura_de_Tela__882_-removebg-preview.png-75d5e57198366c82e1d4e30868d3e81d.stex"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 24.5 )
+
+[node name="SanduicheColetavel" type="Node2D"]
+position = Vector2( 259, 134 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( -1, 0 )
+scale = Vector2( 0.135158, 0.182998 )
+texture = SubResource( 3 )
+region_rect = Rect2( 600, 110, 305, 38 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -0.5 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="coletar_sanduiche"]
